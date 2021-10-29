@@ -31,6 +31,7 @@ requirements:
     - rust
   run:
     - python
+    - requests==2.26.0
     - watchdog >=2.1.3,<3
 
 test:
