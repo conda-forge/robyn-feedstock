@@ -33,7 +33,7 @@ requirements:
     - multiprocess ==0.70.12.2
     - python
     - requests ==2.26.0
-    - uvloop ==0.16.0  # [darwin]
+    - uvloop ==0.16.0  # [unix]
     - watchdog ==2.1.3
 
 test:
