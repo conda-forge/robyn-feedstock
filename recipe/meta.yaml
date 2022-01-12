@@ -40,7 +40,7 @@ test:
   imports:
     - robyn
   commands:
-    - pytest -vvv integration_tests
+    - pytest -vvv --capture=tee-sys integration_tests
   source_files:
     - integration_tests
   requires:
