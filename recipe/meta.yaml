@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.11.0" %}
+{% set version = "0.11.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: 5197154392d7501f43ac0483c04ba138ab74630aaeca2573f2b9754da45bbdac
+  sha256: a511ce2ab11316358f31975d90f92b847f39e9ee60bc6ba951569a820542d6ff
   patches:
     - 0001-add-maturin.patch
 
