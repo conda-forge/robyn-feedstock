@@ -42,7 +42,7 @@ test:
   commands:
     - pytest -vvv integration_tests
   source_files:
-    - integration__tests
+    - integration_tests
   requires:
     - pytest
     - pytest-sugar
