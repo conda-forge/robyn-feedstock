@@ -40,9 +40,13 @@ test:
   imports:
     - robyn
   commands:
-    - pip check
+    - pytest -vvv integration_tests
+  source_files:
+    - integration__tests
   requires:
-    - pip
+    - pytest
+    - pytest-sugar
+    - websockets
 
 about:
   home: https://github.com/sansyrox/robyn
