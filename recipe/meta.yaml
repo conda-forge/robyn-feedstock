@@ -9,8 +9,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
   sha256: 759a5d94546c1bf3c858cb7e855f67ea009098953ec400f5a01a61fb47dcea60
-  patches:
-    - 0001-add-maturin.patch
+#   patches:
+#     - 0001-add-maturin.patch
 
 build:
   skip: true  # [py<38]
