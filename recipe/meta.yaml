@@ -13,7 +13,7 @@ source:
 #     - 0001-add-maturin.patch
 
 build:
-  skip: true  # [py<38]
+  skip: true  # [py<37]
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -21,10 +21,10 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
-    - maturin
+    - maturin >=0.12,<0.13
 
   host:
-    - maturin
+    - maturin >=0.12,<0.13
     - poetry
     - pip
     - python
