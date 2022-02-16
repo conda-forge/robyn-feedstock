@@ -19,6 +19,6 @@ python:
 rust_compiler:
 - rust
 rust_compiler_version:
-- 1.5.0
+- 1.49.0
 target_platform:
 - osx-64
