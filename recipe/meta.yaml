@@ -9,11 +9,9 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
   sha256: ef82ae7dfef9a96a8f5ab479ec6fc5fd460d3a7671e8713d20db52f2e9700984
-#   patches:
-#     - 0001-add-maturin.patch
 
 build:
-  skip: true  # [py<38]
+  skip: true  # [py<37]
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -21,11 +19,10 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
-    - maturin
+    - maturin >=0.12,<0.13
 
   host:
-    - maturin
-    - poetry
+    - maturin >=0.12,<0.13
     - pip
     - python
     - rust
@@ -44,8 +41,7 @@ test:
   source_files:
     - integration_tests
   requires:
-    - pytest
-    - pytest-sugar
+    - pytest==6.2.5
     - websockets
 
 about:
