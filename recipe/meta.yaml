@@ -13,7 +13,10 @@ source:
 build:
   skip: true  # [py<37]
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    # TODO remove this when rust-activation-feedstock is fixed
+    - export CARGO_BUILD_RUSTFLAGS="$CARGO_BUILD_RUSTFLAGS -C link-arg=-Wl,-headerpad_max_install_names -C link-arg=-Wl,-dead_strip_dylibs"
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
