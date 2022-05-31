@@ -15,7 +15,7 @@ build:
   number: 0
   script:
     # TODO remove this when rust-activation-feedstock is fixed
-    - export CARGO_BUILD_RUSTFLAGS="$CARGO_BUILD_RUSTFLAGS -C link-arg=-Wl,-headerpad_max_install_names -C link-arg=-Wl,-dead_strip_dylibs"
+    - export CARGO_BUILD_RUSTFLAGS="$CARGO_BUILD_RUSTFLAGS -C link-arg=-Wl,-headerpad_max_install_names -C link-arg=-Wl,-dead_strip_dylibs"  # [osx]
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
