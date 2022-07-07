@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.16.6" %}
+{% set version = "0.17.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: 7380f2d8a17dc69f86d8041465d3f38c740e1ec02f0d21c5477e74fd3caf9456
+  sha256: f63e64638c538e27487fd4bc56ce6f65f5d8222097b8d1b8e3e4709f3e3a6c0e
 
 build:
   skip: true  # [py<37]
@@ -26,6 +26,7 @@ requirements:
   run:
     - multiprocess ==0.70.12.2
     - python
+    - pytest ==6.2.5
     - requests ==2.26.0
     - uvloop ==0.16.0  # [unix]
     - watchdog >=2.1.3
@@ -38,7 +39,7 @@ test:
   source_files:
     - integration_tests
   requires:
-    - pytest==6.2.5
+    - pytest ==6.2.5
     - websockets
 
 about:
