@@ -26,6 +26,7 @@ requirements:
   run:
     - multiprocess ==0.70.12.2
     - python
+    - pytest ==6.2.5
     - requests ==2.26.0
     - uvloop ==0.16.0  # [unix]
     - watchdog >=2.1.3
@@ -38,7 +39,7 @@ test:
   source_files:
     - integration_tests
   requires:
-    - pytest==6.2.5
+    - pytest ==6.2.5
     - websockets
 
 about:
