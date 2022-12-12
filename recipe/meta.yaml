@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.18.2" %}
+{% set version = "0.19.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: ea3af58721664259edd6585533fad8b410359f821a1eb955a8f38396b8e9e1f0
+  sha256: 626b233810262cd7a129776de679ab56be8288537be17195a3278298efb6cfde
 
 build:
   skip: true  # [py<37]
@@ -34,13 +34,6 @@ requirements:
 test:
   imports:
     - robyn
-  commands:
-    - pytest -vvv --capture=tee-sys integration_tests  # [not win]
-  source_files:
-    - integration_tests
-  requires:
-    - pytest ==6.2.5
-    - websockets
 
 about:
   home: https://github.com/sansyrox/robyn
