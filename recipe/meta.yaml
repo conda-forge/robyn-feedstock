@@ -39,6 +39,9 @@ test:
     - robyn
   commands:
     - pytest -vvv --capture=tee-sys  integration_tests
+  requires:
+    - pytest
+    - websocket
 
 about:
   home: https://github.com/sansyrox/robyn
