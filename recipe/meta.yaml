@@ -41,7 +41,8 @@ test:
     - pytest -vvv --capture=tee-sys  integration_tests
   requires:
     - pytest
-    - websockets
+    - requests ==2.28.2
+    - websocket-client ==1.5.0
 
 about:
   home: https://github.com/sansyrox/robyn
