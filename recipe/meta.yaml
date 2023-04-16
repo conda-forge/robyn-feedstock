@@ -33,8 +33,12 @@ requirements:
     - watchdog ==2.2.1
 
 test:
+  source_files:
+    - integration_tests
   imports:
     - robyn
+  commands:
+    - pytest -vvv --capture=tee-sys  integration_tests
 
 about:
   home: https://github.com/sansyrox/robyn
