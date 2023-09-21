@@ -37,7 +37,8 @@ test:
   imports:
     - robyn
   commands:
-    - ls
+    - ls -laR --color
+    - pwd
     - pytest -vvv --capture=tee-sys
   requires:
     - jinja2
