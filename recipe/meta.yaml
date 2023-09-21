@@ -37,6 +37,7 @@ test:
   imports:
     - robyn
   commands:
+    - ls
     - pytest -vvv --capture=tee-sys
   requires:
     - jinja2
