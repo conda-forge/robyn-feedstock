@@ -11,7 +11,7 @@ source:
   sha256: f5e656e043e02925a528b9aa47ac7e034768419430d94264738f7fc982ce6411
 
 build:
-  skip: true  # [py<37]
+  skip: true  # [py<38]
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -24,6 +24,7 @@ requirements:
     - pip
     - python
   run:
+    - inquirerpy ==0.3.4
     - multiprocess ==0.70.14
     - nestd ==0.3.1
     - python
