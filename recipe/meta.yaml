@@ -39,7 +39,7 @@ test:
   commands:
     - ls -laR --color
     - pwd
-    - pytest -vvv --capture=tee-sys
+    - pytest -vvv --capture=tee-sys --pyargs robyn
   requires:
     - jinja2
     - pytest ==7.2.1
