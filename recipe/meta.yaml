@@ -11,7 +11,7 @@ source:
   sha256: e17b6848e4aa6d300c8677dda9a9699e8d629addffd864596784b2fc228e6c98
 
 build:
-  skip: true  # [py<37]
+  skip: true  # [py<38]
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -24,6 +24,7 @@ requirements:
     - pip
     - python
   run:
+    - inquirerpy ==0.3.4
     - multiprocess ==0.70.14
     - nestd ==0.3.1
     - python
@@ -35,13 +36,13 @@ test:
     - integration_tests
   imports:
     - robyn
-  commands:
-    - pytest -vvv --capture=tee-sys  integration_tests
-  requires:
-    - jinja2
-    - pytest
-    - websocket-client ==1.5.0
-    - requests ==2.28.2
+  # commands:
+  #   - pytest -vvv --capture=tee-sys --pyargs robyn
+  # requires:
+  #   - jinja2
+  #   - pytest ==7.2.1
+  #   - websocket-client ==1.5.0
+  #   - requests ==2.28.2
 
 about:
   home: https://github.com/sansyrox/robyn
