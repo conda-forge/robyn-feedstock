@@ -11,7 +11,7 @@ source:
   sha256: 3789bc5d42637d2e67a256aacde89b729a28d722da81ec9c17c9e4376782aef8
 
 build:
-  skip: true  # [py<38]
+  skip: true  # [py<38 or python_impl == 'pypy']
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
   host:
-    - maturin >=0.12,<0.13
+    - maturin >=0.12
     - pip
     - python
   run:
@@ -28,7 +28,7 @@ requirements:
     - multiprocess ==0.70.14
     - nestd ==0.3.1
     - python
-    - uvloop ==0.17.0  # [unix]
+    - uvloop ~=0.17.0  # [unix]
     - watchdog ==2.2.1
 
 test:
