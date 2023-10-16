@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.41.0" %}
+{% set version = "0.41.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: f5e656e043e02925a528b9aa47ac7e034768419430d94264738f7fc982ce6411
+  sha256: a2b25899233ae4f9b511ffdbb0761639dc14ad750a5c470588533195f78360e8
 
 build:
-  skip: true  # [py<38]
+  skip: true  # [py<38 or python_impl == 'pypy']
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
   host:
-    - maturin >=0.12,<0.13
+    - maturin >=0.12
     - pip
     - python
   run:
@@ -28,7 +28,7 @@ requirements:
     - multiprocess ==0.70.14
     - nestd ==0.3.1
     - python
-    - uvloop ==0.17.0  # [unix]
+    - uvloop ~=0.17.0  # [unix]
     - watchdog ==2.2.1
 
 test:
