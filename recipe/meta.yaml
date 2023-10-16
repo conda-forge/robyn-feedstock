@@ -28,7 +28,7 @@ requirements:
     - multiprocess ==0.70.14
     - nestd ==0.3.1
     - python
-    - uvloop ==0.17.0  # [unix]
+    - uvloop ~=0.17.0  # [unix]
     - watchdog ==2.2.1
 
 test:
