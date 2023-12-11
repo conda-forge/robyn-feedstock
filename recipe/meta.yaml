@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.48.0" %}
+{% set version = "0.49.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: 7b7befefeee4af0e76aac9675015ec3e7b373d9d32b73e916e2693ce8811d18b
+  sha256: c1c158b977246a04e31767abd1849bae0ae3c68ab69cf69ec9551a947e9cf854
 
 build:
   skip: true  # [py<38 or python_impl == 'pypy']
