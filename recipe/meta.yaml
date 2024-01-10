@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.50.0" %}
+{% set version = "0.51.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: d4ca3c5f1b235de3be4a6bcda1d34ef37b1d1aab58070cd2fe31ca6589d50499
+  sha256: 15a048570488d3c2f31c487ceabc4ff2d40d45bedf03b4ad632e52ed1865ce60
 
 build:
   skip: true  # [py<38 or python_impl == 'pypy']
@@ -20,32 +20,37 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
   host:
-    - maturin >=0.12
+    # upstream uses maturin >=0.12,<0.13, but on conda maturin 0.12 not available for python 3.11, loosening requirements here
+    - maturin >=0.12,<0.13  # [py<311]
+    - maturin >=0.12  # [py>=311]
     - pip
     - python
   run:
-    - inquirerpy ==0.3.4
+    - python
+    - watchdog ==2.2.1
     - multiprocess ==0.70.14
     - nestd ==0.3.1
-    - python
-    - uvloop ~=0.17.0  # [unix]
-    - watchdog ==2.2.1
-
+    - inquirerpy ==0.3.4
+    - uvloop ~=0.19.0  # [unix]
+    
 test:
   source_files:
     - integration_tests
   imports:
     - robyn
-  # commands:
+  commands:
+    - pip check
   #   - pytest -vvv --capture=tee-sys --pyargs robyn
-  # requires:
+  requires:
+    - pip
   #   - jinja2
   #   - pytest ==7.2.1
   #   - websocket-client ==1.5.0
   #   - requests ==2.28.2
 
 about:
-  home: https://github.com/sansyrox/robyn
+  home: https://robyn.tech/
+  dev_url: https://github.com/sansyrox/robyn
   summary: Async Python backend server with a runtime written in Rust.
   license: BSD-2-Clause
   license_file: LICENSE
