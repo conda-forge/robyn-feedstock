@@ -3,11 +3,13 @@ About robyn-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/robyn-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/sansyrox/robyn
+Home: https://robyn.tech/
 
 Package license: BSD-2-Clause
 
 Summary: Async Python backend server with a runtime written in Rust.
+
+Development: https://github.com/sansyrox/robyn
 
 Documentation: https://sansyrox.github.io/robyn/
 
