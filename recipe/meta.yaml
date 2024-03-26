@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.52.3" %}
+{% set version = "0.53.1" %}
 
 
 package:
@@ -8,12 +8,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: f1f7b14be6fbc4cf7e696b83b88cadc5b80ada52525f0d78d5a6d01efe1866a2
+  sha256: 9aaa9633c1902e91e51e57c6026773a771a6951f171e3c7076b511c792942258
 
 build:
   skip: true  # [py<38 or python_impl == 'pypy']
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  entry_points:
+    - robyn=robyn.cli:run
 
 requirements:
   build:
@@ -32,7 +34,8 @@ requirements:
     - nestd ==0.3.1
     - inquirerpy ==0.3.4
     - uvloop ~=0.19.0  # [unix]
-    - rustimport >=1.3.4,<2.0.0
+    - rustimport ==1.3.4
+    - orjson ==3.9.15
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 test:
   source_files:
@@ -41,6 +44,7 @@ test:
     - robyn
   commands:
     - pip check
+    - robyn --help
   #   - pytest -vvv --capture=tee-sys --pyargs robyn
   requires:
     - pip
