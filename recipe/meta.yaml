@@ -12,7 +12,7 @@ source:
 
 build:
   skip: true  # [py<38 or python_impl == 'pypy']
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - robyn=robyn.cli:run
