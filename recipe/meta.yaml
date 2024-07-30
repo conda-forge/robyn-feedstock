@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.58.0" %}
+{% set version = "0.58.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: 107e8cfcf8b75a39814a92285fe27d0064cdf76d1bcdb14828db2dc9ac6ff426
+  sha256: 2e2883dcbcc56346e02cf7397f2b7e658a9e3a5afe1bbfa02f27d4edf6380933
 
 build:
   # Need to skip 3.12 due to watchdog v2.2.1 and orjson v3.9.15 not availble on conda for python v3.12
