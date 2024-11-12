@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.63.0" %}
+{% set version = "0.64.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: f53c2cd9e862a32a33e43ce45d45b5249c9e2a3cd7be90094820d1b006731a16
+  sha256: da2dc6fdac65767659ffb48e3c96317917c09df45a84217da5f072f68c3bec2a
 
 build:
   skip: true  # [py<38 or python_impl == 'pypy' or py>311]
-  number: 1
+  number: 0
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
