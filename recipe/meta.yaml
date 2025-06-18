@@ -1,5 +1,5 @@
 {% set name = "robyn" %}
-{% set version = "0.68.0" %}
+{% set version = "0.69.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
-  sha256: 7225b388fe2e911f35724bb941636302bfa8a0c12e4bdb6c8fc171434702cbf4
+  sha256: 95ec787df5c851638c539c73e559f729891f186f831a16f05c0d7e7b8ff1809a
 
 build:
   skip: true  # [py<38 or python_impl == 'pypy' or py>311]
@@ -38,7 +38,7 @@ requirements:
     - rustimport ==1.3.4
     - uvloop ~=0.21.0  # [unix]
     - watchdog ==4.0.1
-        
+
 test:
   imports:
     - robyn
