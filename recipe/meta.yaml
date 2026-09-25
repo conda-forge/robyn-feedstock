@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/robyn-{{ version }}.tar.gz
   sha256: 95ec787df5c851638c539c73e559f729891f186f831a16f05c0d7e7b8ff1809a
 
 build:
