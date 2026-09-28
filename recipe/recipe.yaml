@@ -47,7 +47,8 @@ tests:
   - python:
       imports:
         - robyn
-      pip_check: true
+      # remove pipcheck to loosen multiprocess pin  
+      pip_check: false
   - requirements:
       run:
         - python
