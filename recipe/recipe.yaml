@@ -39,15 +39,16 @@ requirements:
     - multiprocess >=0.70.14
     - orjson ==3.9.15
     - rustimport ==1.3.4
+    # loosen pin here
     - if: unix
-      then: uvloop ~=0.21.0
+      then: uvloop >=0.21.0
     - watchdog ==4.0.1
 
 tests:
   - python:
       imports:
         - robyn
-      # remove pipcheck to loosen multiprocess pin  
+      # remove pipcheck to loosen multiprocess/uvloop pin  
       pip_check: false
   - requirements:
       run:
