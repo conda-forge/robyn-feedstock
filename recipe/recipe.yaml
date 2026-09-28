@@ -41,7 +41,7 @@ requirements:
     - rustimport ==1.3.4
     # loosen pin here
     - if: unix
-      then: uvloop >=0.21.0
+      then: uvloop
     - watchdog ==4.0.1
 
 tests:
