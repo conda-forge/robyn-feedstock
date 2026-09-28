@@ -13,8 +13,8 @@ source:
   sha256: 7225b388fe2e911f35724bb941636302bfa8a0c12e4bdb6c8fc171434702cbf4
 
 build:
-  number: 2
-  skip: match(python, "<3.8") or python_impl == 'pypy' or match(python, ">3.11")
+  number: 3
+  skip: python_impl == 'pypy'
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - ${{ PYTHON }} -m pip install . -vv
@@ -29,11 +29,7 @@ requirements:
     - ${{ compiler('rust') }}
     - cargo-bundle-licenses
   host:
-    # upstream uses maturin >=0.12,<0.13, but on conda maturin 0.12 not available for python 3.11, loosening requirements here
-    - if: match(python, "<3.11")
-      then: maturin >=0.12,<0.13
-    - if: match(python, ">=3.11")
-      then: maturin >=0.12
+    - maturin >=0.12
     - pip
     - python
   run:
