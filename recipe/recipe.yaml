@@ -42,13 +42,13 @@ requirements:
     # loosen pin here
     - if: unix
       then: uvloop
-    - watchdog ==4.0.1
+    - watchdog >=4.0.1
 
 tests:
   - python:
       imports:
         - robyn
-      # remove pipcheck to loosen multiprocess/uvloop pin  
+      # remove pipcheck to loosen multiprocess/uvloop/watchdog pin  
       pip_check: false
   - requirements:
       run:
